@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/Screenshot 2024-10-18 172805.png" rounded="3">
+    <title>SECE Resource Hub</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+        }
+
+        /* Theme colors */
+        .navbar, .footer {
+            background-color: #004080;
+            color: white;
+        }
+        .navbar a, .footer a {
+            color: #ffc107;
+        }
+        .hero {
+            background-color: #ffc107;
+            color: #004080;
+            padding: 100px 0;
+        }
+
+        .card-title {
+            color: #004080;
+        }
+
+        .btn-custom {
+            background-color: #004080;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background-color: #003366;
+        }
+
+        .footer {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .modal-content {
+            background-color: #ffc107;
+            color: #004080;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #004080;
+        }
+
+        /* Highlighting section when clicked */
+        .highlighted {
+            animation: highlight 1s ease-in-out;
+        }
+
+        @keyframes highlight {
+            0% {
+                background-color: #ffc107;
+            }
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        /* Smooth transition with delay */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Delay effect for section transition */
+        .scroll-section {
+            transition: background-color 1.5s ease-in-out;
+        }
+
+        .scroll-section.active {
+            background-color: #ffc107;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <img src="/Screenshot 2024-10-18 165819.png" alt="Sri Eshwar College of Engineering" height="60" rounded="5">
+    </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#hackathons" onclick="scrollToSection('#hackathons')">Hackathons</a></li>
+                <li class="nav-item"><a class="nav-link" href="#internships" onclick="scrollToSection('#internships')">Internships</a></li>
+                <li class="nav-item"><a class="nav-link" href="#mentorship" onclick="scrollToSection('#mentorship')">Mentorship</a></li>
+                <li class="nav-item"><a class="nav-link" href="#conferences" onclick="scrollToSection('#conferences')">Conferences</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contests" onclick="scrollToSection('#contests')">Contests</a></li>
+                <li class="nav-item"><a class="nav-link" href="#scholarships" onclick="scrollToSection('#scholarships')">Scholarships</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects" onclick="scrollToSection('#projects')">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1>Welcome to SECE Resource Hub</h1>
+            <p>Your one-stop platform for exploring opportunities like Hackathons, Internships, Projects, and more!</p>
+            <a href="#resources" class="btn btn-custom btn-lg">Explore Resources</a>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="py-5" id="resources">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Resources</h2>
+            <div class="row">
+                <!-- Hackathon Section -->
+                <div class="col-lg-4 col-md-6 mb-4 scroll-section" id="hackathons">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Hackathons</h5>
+                            <p class="card-text">Find the latest hackathons to showcase your skills and connect with industry professionals.</p>
+                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#hackathonModal">Explore Hackathons</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship Section -->
+                <div class="col-lg-4 col-md-6 mb-4 scroll-section" id="internships">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Internships</h5>
+                            <p class="card-text">Get access to exciting internship opportunities in top companies worldwide.</p>
+                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#internshipModal">Explore Internships</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentorship Section -->
+                <div class="col-lg-4 col-md-6 mb-4 scroll-section" id="mentorship">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Mentorship</h5>
+                            <p class="card-text">Connect with mentors who can guide you in your career development.</p>
+                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#mentorshipModal">Explore Mentorship</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conferences Section -->
+                <div class="col-lg-4 col-md-6 mb-4 scroll-section" id="conferences">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Conferences</h5>
+                            <p class="card-text">Attend the best conferences to learn from and network with experts.</p>
+                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#conferenceModal">Explore Conferences</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contests Section -->
+                <div class="col-lg-4 col-md-6 mb-4 scroll-section" id="contests">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Contests</h5>
+                            <p class="card-text">Participate in global contests and challenges to showcase your talent.</p>
+                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#contestModal">Explore Contests</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scholarships Section -->
+                <div class="col-lg-4 col-md-6 mb-4 scroll-section" id="scholarships">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Scholarships</h5>
+                            <p class="card-text">Find scholarships to fund your studies or research projects.</p>
+                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#scholarshipModal">Explore Scholarships</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="col-lg-4 col-md-6 mb-4 scroll-section" id="projects">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Projects</h5>
+                            <p class="card-text">Get involved in real-world projects and enhance your portfolio.</p>
+                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#projectModal">Explore Projects</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathon Modal -->
+    <div class="modal fade" id="hackathonModal" tabindex="-1" role="dialog" aria-labelledby="hackathonModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="hackathonModalLabel">Hackathons</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Explore a wide range of national and international hackathons. Compete, learn, and grow!</p>
+                    <ul>
+                        <li><a href="https://unstop.com/competitions" target="_blank">AI Hackathon - Unstop</a></li>
+                        <li><a href="https://hack2skill.com/events" target="_blank">Blockchain Challenge - Hack2Skill</a></li>
+                        <li><a href="https://unstop.com/competitions" target="_blank">Web Development Hackathon - Unstop</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internship Modal -->
+    <div class="modal fade" id="internshipModal" tabindex="-1" role="dialog" aria-labelledby="internshipModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="internshipModalLabel">Internships</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Find internship opportunities from top platforms and companies around the world.</p>
+                    <ul>
+                        <li><a href="https://internshala.com/" target="_blank">Internshala</a></li>
+                        <li><a href="https://angel.co/jobs" target="_blank">AngelList</a></li>
+                        <li><a href="https://www.linkedin.com/jobs/internships/" target="_blank">LinkedIn Internships</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mentorship Modal -->
+    <div class="modal fade" id="mentorshipModal" tabindex="-1" role="dialog" aria-labelledby="mentorshipModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mentorshipModalLabel">Mentorship</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Connect with experienced mentors who can guide your academic or career growth.</p>
+                    <ul>
+                        <li><a href="https://www.micromentor.org/" target="_blank">MicroMentor</a></li>
+                        <li><a href="https://www.adplist.org/" target="_blank">ADPList</a></li>
+                        <li><a href="https://mentorcruise.com/" target="_blank">MentorCruise</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conference Modal -->
+    <div class="modal fade" id="conferenceModal" tabindex="-1" role="dialog" aria-labelledby="conferenceModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="conferenceModalLabel">Conferences</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Attend global conferences to expand your knowledge and network with industry experts.</p>
+                    <ul>
+                        <li><a href="https://conferences.ieee.org/" target="_blank">IEEE Conferences</a></li>
+                        <li><a href="https://www.techconferences.io/" target="_blank">Tech Conferences</a></li>
+                        <li><a href="https://www.re-work.co/events" target="_blank">RE•WORK AI & Tech Conferences</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contest Modal -->
+    <div class="modal fade" id="contestModal" tabindex="-1" role="dialog" aria-labelledby="contestModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contestModalLabel">Contests</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Participate in exciting contests to showcase your skills and win great prizes.</p>
+                    <ul>
+                        <li><a href="https://www.codechef.com/contests" target="_blank">CodeChef Contests</a></li>
+                        <li><a href="https://www.kaggle.com/competitions" target="_blank">Kaggle Competitions</a></li>
+                        <li><a href="https://www.hackerrank.com/contests" target="_blank">HackerRank Contests</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scholarship Modal -->
+    <div class="modal fade" id="scholarshipModal" tabindex="-1" role="dialog" aria-labelledby="scholarshipModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="scholarshipModalLabel">Scholarships</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Find various scholarships to fund your education and research opportunities.</p>
+                    <ul>
+                        <li><a href="https://www.scholarships.com/" target="_blank">Scholarships.com</a></li>
+                        <li><a href="https://www.chegg.com/scholarships" target="_blank">Chegg Scholarships</a></li>
+                        <li><a href="https://www.fastweb.com/" target="_blank">Fastweb</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Projects</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Work on real-world projects to boost your skills and build a strong portfolio.</p>
+                    <ul>
+                        <li><a href="https://devpost.com/" target="_blank">Devpost</a></li>
+                        <li><a href="https://github.com/explore" target="_blank">GitHub Explore</a></li>
+                        <li><a href="https://www.freelancer.com/" target="_blank">Freelancer</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>SECE Resource Hub &copy; 2024 | Designed to Empower Students</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Scroll to section script with delay -->
+    <script>
+        function scrollToSection(sectionId) {
+            var target = document.querySelector(sectionId);
+            target.classList.add('active');
+            setTimeout(function() {
+                document.querySelector(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                setTimeout(function() {
+                    target.classList.remove('active');
+                }, 1500); // Highlight duration
+            }, 500); // Delay before scrolling
+        }
+    </script>
+</body>
+</html>
