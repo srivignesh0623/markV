@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - SECE Resource Hub</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9f9f9; }
+        .card { max-width: 400px; margin: auto; margin-top: 10%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px; }
+        .card-header, .btn-custom { background-color: #004080; color: white; }
+        .btn-custom:hover { background-color: #003366; }
+        .error { color: red; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>Sign In</h3>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/signin">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="User" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="pass" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">Sign In</button>
+            </form>
+            <p id="error-message" class="text-center mt-3 error" style="display: none;">Invalid credentials. Please try again or <a href="/signup">Sign Up</a></p>
+        </div>
+    </div>
+    <script>
+        // Placeholder error display for demo purposes; replace with backend-driven error handling
+        const showError = (message) => {
+            const errorDiv = document.getElementById("error-message");
+            errorDiv.textContent = message;
+            errorDiv.style.display = "block";
+        };
+    </script>
+</body>
+</html>
